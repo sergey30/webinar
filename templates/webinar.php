@@ -36,12 +36,24 @@
                 <div class="caption">Если трансляция не идет, измените настройки браузера разрешив автозапуск контента</div>
             </div>
             <div class="chat">
+                <div class="messages">
+                    <div class="message">
 
+                    </div>
+                </div>
+                <form class="" action="" method="get">
+                    <input type="hidden" name="user_name" value="<?php echo $_SESSION['user_name'] ?>">
+                    <textarea name="message" required></textarea>
+                    <button type="submit" class="" name="submit" value="yes">Отправить</button>
+                </form>
+                <div class="notification">
+                    Вы видите только свои сообщения и сообщения модераторов.
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- <script src="assets/lib/jquery-3.3.1.js"></script> -->
+    <script src="assets/lib/jquery-3.3.1.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

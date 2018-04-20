@@ -10,7 +10,7 @@ if ((isset($_GET['user_name'])) && (strlen($_GET['user_name']) > 0) && ($_GET['s
     $user_name = $_GET['user_name'];
     $_SESSION['user_name'] = $user_name;
     add_user($user_ip, $user_browser, $date_created, $user_name);
-    require '../templates/webinar.php';
+    show_webinar($user_name);
 } elseif ( (isset($_SESSION['user_name'] )) && (!isset($_GET['user_name'])) ) {
     require '../templates/login.php';
 } else {

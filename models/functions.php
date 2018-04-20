@@ -18,5 +18,12 @@ function add_user($user_ip, $user_browser, $date_created, $user_name){
 }
 
 
+function show_webinar($user_name){
+    require '../templates/webinar.php';
+}
+
+
+
+
 
  ?>
