@@ -16,8 +16,8 @@
             </div>
             <div class="participant">
                 <span class="faded-letters">Участник:</span>
-                <span class="participant-name">xcvc</span>
-                <button type="button" name="button">Выйти</button>
+                <span class="participant-name"><?php echo $user_name ?></span>
+                <a href="http://192.168.64.2/webinar/public/?action=out">Выйти</a>
             </div>
         </div>
         <div class="title">

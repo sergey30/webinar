@@ -25,15 +25,15 @@
                 <span class="faded-letters">9</span>
                 <span class="big-latters">ч.</span>
             </div>
-            <form class="" action="" method="post">
+            <form class="" action="" method="get">
                 <label for="input-name">Введите ваше имя:</label><br>
-                <input type="text" class="" id="input-name" placeholder="например, Иван Петров">
-                <button type="submit" class="">Войти в комнату</button>
+                <input type="text" class="" id="input-name" name="user_name" placeholder="например, Иван Петров" required autofocus pattern="[a-zA-Z0-9А-Яа-яЁё]{1,20}" value="<?php echo $_SESSION['user_name'] ?>">
+                <button type="submit" class="" name="submit" value="yes">Войти в комнату</button>
             </form>
         </div>
     </div>
 
-    <script src="assets/lib/jquery-3.3.1.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/lib/jquery-3.3.1.js"></script> -->
+    <!-- <script src="assets/js/insert_name.js"></script> -->
   </body>
 </html>

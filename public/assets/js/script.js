@@ -18,18 +18,11 @@ var video = document.querySelector(".webinar-container .content .video");
 var videoAutoplay = document.querySelector(".webinar-container .content .video video");
 
 function enableVideo(timeForStart) {
-    image.classList.toggle("visible");
-    video.classList.toggle("visible");
-    if (videoAutoplay.hasAttribute("src")) {
-        videoAutoplay.pause();
-        videoAutoplay.removeAttribute("src");
-    } else {
-        videoAutoplay.setAttribute("src", "assets/images/video1.mp4");
-        videoAutoplay.play();
-        videoAutoplay.currentTime = timeForStart;
-    }
-
-
+    image.classList.remove("visible");
+    video.classList.add("visible");
+    videoAutoplay.setAttribute("src", "assets/images/video1.mp4");
+    videoAutoplay.play();
+    videoAutoplay.currentTime = timeForStart;
 }
 
 // check time for webinar
@@ -42,13 +35,11 @@ function checkTime() {
 }
 
 time = checkTime();
-var timeForStart = time[1];
-console.log(timeForStart);
-enableVideo(timeForStart);
 
-
-
-
+if ((time[0] >= 9) && (time[0] <= 10)) {
+    var timeForStart = time[1] * 60;
+    enableVideo(timeForStart);
+}
 
 
 
