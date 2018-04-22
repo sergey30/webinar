@@ -127,7 +127,7 @@ a:hover {
     display: none;
     width: 500px;
     height: 300px;
-    margin: 20px 15px;
+    margin: 20px 15px 50px 15px;
 }
 
 .webinar-container .content .img img {
@@ -158,9 +158,9 @@ a:hover {
 }
 
 .webinar-container .content .chat {
-    width: 300px;
-    height: 500px;
+    width: 400px;
     margin: 20px 15px;
+    padding: 10px;
     border: solid 0.1px #cfcfcf;
 }
 
@@ -185,7 +185,6 @@ a:hover {
 
     .webinar-container .content .chat {
         width: 500px;
-        height: 600px;
     }
 }
 
@@ -204,22 +203,31 @@ a:hover {
 
     .webinar-container .content .chat {
         width: 450px;
-        height: 700px;
     }
 }
 
 .webinar-container .content .chat .messages {
-    height: 500px;
-    border: solid;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 600px;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.webinar-container .content .chat .messages .user-name {
+    padding-left: 10px;
+    font-size: 13px;
+    color: blue;
 }
 
 .webinar-container .content .chat .messages .message {
-    border: solid;
+    margin-bottom: 5px;
 }
 
 .webinar-container .content .chat form {
     display: flex;
     justify-content: space-between;
+
 }
 
 .webinar-container .content .chat form textarea {
@@ -233,7 +241,7 @@ a:hover {
 .webinar-container .content .chat form button {
     display: inline-block;
     margin-left: 15px;
-    padding: 10px;
+    padding: 5px 10px ;
     background-color: #81003a;
     color: white;
     text-align: center;

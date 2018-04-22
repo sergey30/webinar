@@ -17,7 +17,7 @@
             <div class="participant">
                 <span class="faded-letters">Участник:</span>
                 <span class="participant-name"><?php echo $user_name ?></span>
-                <a href="http://192.168.64.2/webinar/public/?action=out">Выйти</a>
+                <a href="http://192.168.64.2/webinar/public/">Выйти</a>
             </div>
         </div>
         <div class="title">
@@ -37,13 +37,16 @@
             </div>
             <div class="chat">
                 <div class="messages">
-                    <div class="message">
-
+                    <!-- <div class="user-name">
+                        sdvsdvsd
                     </div>
+                    <div class="message">
+                        rdedfvdfv
+                    </div> -->
                 </div>
-                <form class="" action="" method="get">
-                    <input type="hidden" name="user_name" value="<?php echo $_SESSION['user_name'] ?>">
-                    <textarea name="message" required></textarea>
+                <form class="" action="" method="post">
+                    <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
+                    <textarea name="message" rows="1" required></textarea>
                     <button type="submit" class="" name="submit" value="yes">Отправить</button>
                 </form>
                 <div class="notification">

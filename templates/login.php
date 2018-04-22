@@ -25,9 +25,9 @@
                 <span class="faded-letters">9</span>
                 <span class="big-latters">ч.</span>
             </div>
-            <form class="" action="" method="get">
+            <form class="" action="" method="post">
                 <label for="input-name">Введите ваше имя:</label><br>
-                <input type="text" class="" id="input-name" name="user_name" placeholder="например, Иван Петров" required autofocus pattern="[a-zA-Z0-9А-Яа-яЁё]{1,20}" value="<?php echo $_SESSION['user_name'] ?>">
+                <input type="text" class="" id="input-name" name="user_name" placeholder="например, Иван Петров" required autofocus pattern="[a-zA-Z0-9А-Яа-яЁё]{1,20}" value="<?php echo $user_name ?>">
                 <button type="submit" class="" name="submit" value="yes">Войти в комнату</button>
             </form>
         </div>
