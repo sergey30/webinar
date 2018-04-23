@@ -29,20 +29,18 @@
                 <img class="" src="assets/images/slide2.jpg" alt="">
                 <img class="" src="assets/images/slide3.jpg" alt="">
                 <img class="" src="assets/images/slide4.jpg" alt="">
-                <div class="caption">Вебинар стартует в 19:00 мск Поддержка start@makers.bz</div>
+                <div class="caption">Вебинар стартует в 19:00 мск</div>
             </div>
             <div class="video ">
                 <video controls></video>
                 <div class="caption">Если трансляция не идет, измените настройки браузера разрешив автозапуск контента</div>
             </div>
             <div class="chat">
+                <div class="participants">
+                    Количество участников: <span class="amount"></span>
+                </div>
                 <div class="messages">
-                    <!-- <div class="user-name">
-                        sdvsdvsd
-                    </div>
-                    <div class="message">
-                        rdedfvdfv
-                    </div> -->
+
                 </div>
                 <form class="" action="" method="post">
                     <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">

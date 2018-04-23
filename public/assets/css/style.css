@@ -206,6 +206,11 @@ a:hover {
     }
 }
 
+.webinar-container .content .chat .participants {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
 .webinar-container .content .chat .messages {
     display: flex;
     flex-direction: column-reverse;
@@ -220,8 +225,25 @@ a:hover {
     color: blue;
 }
 
+.webinar-container .content .chat .messages .user-name-admin {
+    padding-left: 10px;
+    font-size: 13px;
+    color: green;
+}
+
 .webinar-container .content .chat .messages .message {
-    margin-bottom: 5px;
+    margin: 0 10px 10px 0;
+    padding: 2px 10px;
+    font-size: 14px;
+    background-color: #eff4f9;
+}
+
+.webinar-container .content .chat .messages .message-admin {
+    margin: 0 10px 10px 0;
+    padding: 2px 10px;
+    font-size: 14px;
+    color: #2b2b2b;
+    background-color: #f1f9f0;
 }
 
 .webinar-container .content .chat form {

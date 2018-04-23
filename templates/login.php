@@ -19,11 +19,11 @@
             </div>
             <div class="date">
                 <span class="faded-letters">Дата проведения:</span><br>
-                <span class="big-latters">17.04.2018 - 19:00</span>
+                <span class="big-latters"><?php echo $today_date; ?> 19:00</span>
                 <span class="faded-letters">мск</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span class="big-latters">Начало</span>
-                <span class="faded-letters">9</span>
-                <span class="big-latters">ч.</span>
+                <span class="faded-letters">До начала менее</span>
+                <span class="big-latters"><?php echo $webinar_time; ?></span>
+                <span class="faded-letters">ч.</span>
             </div>
             <form class="" action="" method="post">
                 <label for="input-name">Введите ваше имя:</label><br>

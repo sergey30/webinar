@@ -30,15 +30,17 @@ function enableVideo(timeForStart) {
 function checkTime() {
     var time = new Date();
     var timeCurrent = [];
-    timeCurrent.push(time.getUTCHours() + 7);
+    timeCurrent.push(time.getUTCHours() + 3);
     timeCurrent.push(time.getUTCMinutes());
     return timeCurrent;
 }
 
-time = checkTime();
+var time = new Date();
+var hours = time.getUTCHours() + 3;
+var minutes = time.getUTCMinutes();
 
-if ((time[0] >= 9) && (time[0] <= 10)) {
-    var timeForStart = time[1] * 60;
+if ((hours >= 19) && (hours < 21)) {
+    var timeForStart = minutes * 60;
     enableVideo(timeForStart);
 }
 
@@ -51,24 +53,19 @@ function addMessage() {
         dataType: "html",
         data: $(".webinar-container .content .chat form").serialize(),
         success: function(response) {
-            $(".webinar-container .content .chat form textarea").val(""); // очистка формы после отправки
-            $(".webinar-container .content .chat .messages .user-name").remove(); // удалить динамически созданые элементы
-            $(".webinar-container .content .chat .messages .message").remove(); // удалить динамически созданые элементы
-
+            $(".webinar-container .content .chat form textarea").val("");
+            $(".webinar-container .content .chat .messages .user-name").remove();
+            $(".webinar-container .content .chat .messages .message").remove();
         	result = $.parseJSON(response);
-
             var id = "";
             var user_name = "";
             var date_created = "";
             var message = "";
-
-            // будет сформирован блок со всеми существующими сообщениями в базе, принадлежащие конкретному пользователю
             for (var i = 0; i < result.length; i++) {
                 id = result[i].id;
                 user_name = result[i].user_name;
                 date_created = result[i].date_created;
                 message = result[i].message;
-                // формируются новые блоки и в них подставляются данные полученные из базы
                 $(".webinar-container .content .chat .messages").prepend($("<div class='user-name'></div>").text(user_name));
                 $(".webinar-container .content .chat .messages").prepend($("<div class='message'></div>").text(message));
     	    }
@@ -91,44 +88,66 @@ $(document).ready(function() {
 
 
 // show messages
-function showMessage(session_id, url) {
+function showMessage(session_id) {
     $.ajax({
-        url: url,
+        url: "../models/ajax_show_message.php",
         type: "post",
         dataType: "html",
         data: {session_id:session_id},
         success: function(response) {
-            result = $.parseJSON(response);
-            $("#result_form .message").remove();
-            $("#result_form .remove").remove();
-            $("#result_form .message_data").remove();
+            $(".webinar-container .content .chat form textarea").val("");
+            $(".webinar-container .content .chat .messages .user-name").remove();
+            $(".webinar-container .content .chat .messages .message").remove();
+        	result = $.parseJSON(response);
             var id = "";
-            var first_name = "";
-            var last_name = "";
+            var user_name = "";
             var date_created = "";
             var message = "";
             for (var i = 0; i < result.length; i++) {
                 id = result[i].id;
-                first_name = result[i].first_name;
-                last_name = result[i].last_name;
+                user_name = result[i].user_name;
                 date_created = result[i].date_created;
                 message = result[i].message;
-                $("#result_form").prepend($("<div class='message'></div>").text(message));
-                $("#result_form").prepend($("<a href='#' class='remove d-inline-block ml-5 pl-2 pr-2 border-danger border text-danger'></a>").text("remove message").attr("id", id));
-                $("#result_form").prepend($("<span class='message_data d-inline-block mt-3 ml-3 text-primary'></span>").text(first_name + " " + last_name + " " + date_created));
+                $(".webinar-container .content .chat .messages").prepend($("<div class='user-name'></div>").text(user_name));
+                $(".webinar-container .content .chat .messages").prepend($("<div class='message'></div>").text(message));
     	    }
         }
     });
 }
 
-// как только документ загружен сработает функция
 $(document).ready(function() {
-    var session_id = $("#send_message input").attr("value");
-    showMessage(session_id, "../mdl/ajax_show_message.php");
+    var session_id = $(".webinar-container .content .chat form input").attr("value");
+    showMessage(session_id);
 });
 
 
+// show admin's messages
+function showMessageAdmin() {
+    var messages = document.querySelector(".webinar-container .content .chat .messages");
+    var message = document.createElement('div');
+    var userName = document.createElement('div');
+    message.className = "message-admin";
+    message.innerHTML = "Приветствую всех участников встречи! <br> Начинаем в 19:00 - 19:05 по Москве. Чат работает по принципу АНТИСПАМ таким образом: <br> Вы видите только СВОИ сообщения, другие участники их не видят. <br> Я и модератор видим ВСЕ ваши сообщения. <br> Чтобы не теряться и быть на связи, давайте дружить и в соц. сетях: <br> Вконтакте: <a href='https://vk.com/varvara.eremina' target='_blank'>https://vk.com/varvara.eremina</a> <br> Instagram: <a href='https://www.instagram.com/varvaraeremina/' target='_blank'> https://www.instagram.com/varvaraeremina</a> <br> WhatsApp: <a href='https://api.whatsapp.com/send?phone=+79963363106' target='_blank'> https://api.whatsapp.com/send?phone=+79963363106</a>";
+    userName.className = "user-name-admin";
+    userName.innerHTML = "admin";
+    messages.insertBefore(userName, messages.children[0]);
+    messages.insertBefore(message, messages.children[0]);
 
+}
+
+setTimeout(showMessageAdmin, 2000);
+
+
+// show amount participants
+function showAmountParticipants() {
+    var participants = document.querySelector(".webinar-container .content .participants .amount");
+    var amount = Math.floor(Math.random() * (50 - 10)) + 10;
+    participants.innerHTML = amount+400;
+}
+
+if ((hours >= 19) && (hours < 21)) {
+    setInterval(showAmountParticipants, 5000);
+}
 
 
 
