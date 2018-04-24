@@ -11,7 +11,7 @@
     <div class="login-container">
         <div class="form">
             <div class="title">
-                "Турбо Инстаграм. Трансляция мастер-класса. Начинаем сегодня в 19:00 мск."
+                Турбо Инстаграм. Трансляция мастер-класса. Начинаем сегодня в 19:00 мск.
             </div>
             <div class="author">
                 <span class="faded-letters">Ведущие вебинара:</span><br>

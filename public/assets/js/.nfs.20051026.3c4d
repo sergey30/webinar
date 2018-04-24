@@ -15,15 +15,16 @@ setInterval(moveImages, 8000);
 //toggle image/video
 var image = document.querySelector(".webinar-container .content .img");
 var video = document.querySelector(".webinar-container .content .video");
-var videoAutoplay = document.querySelector(".webinar-container .content .video video");
+// var videoAutoplay = document.querySelector(".webinar-container .content .video video");
 
 function enableVideo(timeForStart) {
     image.classList.remove("visible");
     video.classList.add("visible");
-    videoAutoplay.setAttribute("src", "assets/images/video1.mp4");
-    videoAutoplay.play();
-    videoAutoplay.currentTime = timeForStart;
+    // videoAutoplay.setAttribute("src", "assets/images/video1.mp4");
+    // videoAutoplay.play();
+    // videoAutoplay.currentTime = timeForStart;
 }
+
 
 // check time for webinar
 function checkTime() {

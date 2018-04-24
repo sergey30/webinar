@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="title">
-            Турбо Инстаграм. Трансляция мастер-класса. Начинаем сегодня в 19:00 мск.
+            "Турбо Инстаграм. Трансляция мастер-класса. Начинаем сегодня в 19:00 мск."
         </div>
         <div class="content">
             <div class="img visible">
@@ -32,7 +32,7 @@
                 <div class="caption">Вебинар стартует в 19:00 мск</div>
             </div>
             <div class="video ">
-                <video controls></video>
+                <div controls ><iframe width="560" height="315" src="https://www.youtube.com/embed/neIrUoNcJYU?autoplay=1&controls=0&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=1&iv_load_policy=3&webkit-playsinline=1&playsinline=1&showinfo=0&start=5849" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                 <div class="caption">Если трансляция не идет, измените настройки браузера разрешив автозапуск контента</div>
             </div>
             <div class="chat">

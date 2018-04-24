@@ -20,10 +20,9 @@ var videoAutoplay = document.querySelector(".webinar-container .content .video v
 function enableVideo(timeForStart) {
     image.classList.remove("visible");
     video.classList.add("visible");
-    videoAutoplay.setAttribute("src", "assets/images/video1.mp4");
-    videoAutoplay.play();
-    videoAutoplay.currentTime = timeForStart;
+
 }
+
 
 // check time for webinar
 function checkTime() {
