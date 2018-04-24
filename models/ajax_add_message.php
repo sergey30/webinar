@@ -1,4 +1,5 @@
 <?php
+// добавляется новая запись в таблицу messages, $_POST["message"] поступает из формы, $_POST["id"] поступает из скрытого элемента формы в который вписан id сессии, проверяется длина собщения
 if ((isset($_POST['message']) && isset($_POST['id'])) && (strlen($_POST['message']) < 2400)) {
     try {
         $dbh = new PDO('mysql:dbname=webinar_db;host=localhost', 'webinar', '1');

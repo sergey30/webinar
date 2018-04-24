@@ -1,5 +1,10 @@
 <?php
-function add_user($user_ip, $user_browser, $date_created, $user_name){
+function add_user(){
+    $user_name = $_POST['user_name'];
+    $user_ip = $_SERVER['REMOTE_ADDR'];
+    $user_browser = $_SERVER['HTTP_USER_AGENT'];
+    $date_created = date('Y-m-d H:i:s');
+
     try {
         $dbh = new PDO('mysql:dbname=webinar_db;host=localhost', 'webinar', '1');
     } catch (Exception $e) {
@@ -29,28 +34,11 @@ function add_user($user_ip, $user_browser, $date_created, $user_name){
     $array = $sth->fetch(PDO::FETCH_ASSOC);
 
     $_SESSION['id'] = $array['id'];
+
+    header('Location: http://192.168.64.2/webinar/public/?tpl=webinar');
 }
 
-
-function get_user_name(){
-    try {
-        $dbh = new PDO('mysql:dbname=webinar_db;host=localhost', 'webinar', '1');
-    } catch (Exception $e) {
-        die($e->getMessage());
-    }
-
-    $sth = $dbh->prepare("SELECT user_name FROM users WHERE
-                        id = :id");
-    $sth->execute(array('id' => $_SESSION['id']));
-
-    $array = $sth->fetch(PDO::FETCH_ASSOC);
-    $user_name = $array['user_name'];
-    return $user_name;
-}
-
-
-
-
+add_user();
 
 
  ?>
