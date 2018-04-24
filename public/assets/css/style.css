@@ -151,15 +151,15 @@ a:hover {
 
 .webinar-container .content .video .caption,
 .webinar-container .content .img .caption {
-    text-align: center;
-    padding: 2px;
-    background-color: #81003a;
-    color: white;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border: solid 0.1px #cfcfcf;
+    font-size: 12px;
 }
 
 .webinar-container .content .chat {
     width: 400px;
-    margin: 20px 15px;
+    margin: 120px 15px 20px 15px;
     padding: 10px;
     border: solid 0.1px #cfcfcf;
 }
@@ -181,9 +181,11 @@ a:hover {
     .webinar-container .content .video video {
         width: 600px;
         height: 350px;
+        border: solid 0.1px #cfcfcf;
     }
 
     .webinar-container .content .chat {
+        margin: 20px 15px 20px 15px;
         width: 500px;
     }
 }

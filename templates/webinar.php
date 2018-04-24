@@ -29,7 +29,11 @@
                 <img class="" src="assets/images/slide2.jpg" alt="">
                 <img class="" src="assets/images/slide3.jpg" alt="">
                 <img class="" src="assets/images/slide4.jpg" alt="">
-                <div class="caption">Вебинар стартует в 19:00 мск</div>
+                <div class="caption">Если проблемы с видео или звуком: <br>
+                    1. Закройте неиспользуемые вкладки браузера и другие неиспользуемые сейчас программы. <br>
+                    2. Отключите AdBlock и другие расширения, которые могут влиять на работу комнаты. <br>
+                    3. Смените браузер. Рекомендуем последние версии Chrome, Яндекс.Браузер, Opera, Firefox.
+                </div>
             </div>
             <div class="video ">
                 <video controls></video>
