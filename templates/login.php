@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <!-- <script src="assets/lib/jquery-3.3.1.js"></script> -->
-    <!-- <script src="assets/js/insert_name.js"></script> -->
+    <script src="assets/lib/jquery-3.3.1.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

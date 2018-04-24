@@ -44,6 +44,33 @@ if ((hours >= 19) && (hours < 21)) {
 }
 
 
+// add user
+function addUser() {
+    $.ajax({
+        url: "../models/ajax_add_user.php",
+        type: "post",
+        dataType: "html",
+        data: $(".login-container .form form").serialize(),
+        success: function(response) {
+            document.location.href = "http://192.168.64.2/webinar/public/?tpl=webinar&session_id=" + response;
+        }
+    });
+}
+
+$(document).ready(function() {
+    $(".login-container .form form button").click(
+		function(){
+            //проверка, что бы скрипт не сработал, если форма пустая
+            if ($(".login-container .form form input").val()) {
+                addUser();
+    			return false;
+            }
+            return false;
+		}
+	);
+});
+
+
 // add message
 function addMessage() {
     $.ajax({
