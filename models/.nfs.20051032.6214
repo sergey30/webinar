@@ -1,23 +1,15 @@
 <?php
-session_start();
-
-if (isset($_SESSION['id'])) {
-    header('Location: http://192.168.64.2/webinar/public/?tpl=webinar');
-} else {
-    add_user();
-}
-
-function add_user(){
-    $user_name = $_POST['user_name'];
-    $user_ip = $_SERVER['REMOTE_ADDR'];
-    $user_browser = $_SERVER['HTTP_USER_AGENT'];
-    $date_created = date('Y-m-d H:i:s');
-
+if ((isset($_POST['user_name'])) && (strlen($_POST['user_name']) > 0)) {
     try {
         $dbh = new PDO('mysql:dbname=webinar_db;host=localhost', 'webinar', '1');
     } catch (Exception $e) {
         die($e->getMessage());
     }
+
+    $user_name = $_POST['user_name'];
+    $user_ip = $_SERVER['REMOTE_ADDR'];
+    $user_browser = $_SERVER['HTTP_USER_AGENT'];
+    $date_created = date('Y-m-d H:i:s');
 
     $sth = $dbh->prepare("INSERT INTO users SET
                         user_name = :user_name,
@@ -41,10 +33,12 @@ function add_user(){
 
     $array = $sth->fetch(PDO::FETCH_ASSOC);
 
-    $_SESSION['id'] = $array['id'];
+    // $_SESSION['id'] = $array['id'];
 
-    echo $_SESSION['id'];
+    echo $array['id'];
 
-    header('Location: http://192.168.64.2/webinar/public/?tpl=webinar');
+    // echo "string";
+    //
+    // header('Location: http://192.168.64.2/webinar/public/?tpl=webinar');
 }
- ?>
+?>

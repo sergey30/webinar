@@ -25,7 +25,7 @@
                 <span class="big-latters"><?php echo $webinar_time; ?></span>
                 <span class="faded-letters">ч.</span>
             </div>
-            <form class="" action="../models/add_user.php" method="post">
+            <form class="" action="" method="post">
                 <label for="input-name">Введите ваше имя:</label><br>
                 <input type="text" class="" id="input-name" name="user_name" placeholder="например, Иван Петров" required autofocus pattern="[a-zA-Z0-9А-Яа-яЁё]{1,20}" value="<?php echo $user_name ?>">
                 <button type="submit" class="" name="submit" value="yes">Войти в комнату</button>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <!-- <script src="assets/lib/jquery-3.3.1.js"></script> -->
-    <!-- <script src="assets/js/insert_name.js"></script> -->
+    <script src="assets/lib/jquery-3.3.1.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
